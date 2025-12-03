@@ -2,6 +2,7 @@ package com.example.proyectofinal;
 
 public class Animales_aprender {
     public int id, img;
+    /*prueba git*/
     public String nombre, tamano, peso, peligrosidad, apariencia, habitat, dieta, generalidades;
 
     public Animales_aprender(int id, int img, String nombre, String tamano, String peso, String peligrosidad, String apariencia, String habitat, String dieta, String generalidades){
