@@ -61,7 +61,7 @@
             android:layout_margin="20dp"/>
 
         <!--opciones-->
-        <com.example.proyectofinal.OpcionesTierra
+        <com.example.proyectofinal.Opciones
             android:id="@+id/opciones"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

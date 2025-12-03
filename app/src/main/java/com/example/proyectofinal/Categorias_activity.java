@@ -35,13 +35,24 @@ public class Categorias_activity extends AppCompatActivity {
             //intent de llamar a la actividad que mostrará las preguntas
             btnAgua.setOnClickListener(v -> {
                 //actividad preguntas animales acuaticos
+                Intent intentJuego=new Intent(this, Pantalla_juego.class);
+                intentJuego.putExtra("categoria", "agua");
+                intentJuego.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intentJuego);
+                finish();
             });
             btnAire.setOnClickListener(v -> {
                 //actividad preguntas animales aereos
+                Intent intentJuego=new Intent(this, Pantalla_juego.class);
+                intentJuego.putExtra("categoria", "aire");
+                intentJuego.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intentJuego);
+                finish();
             });
             btnTierra.setOnClickListener(v -> {
                 //actividad preguntas animales terrestres
                 Intent intentJuego=new Intent(this, Pantalla_juego.class);
+                intentJuego.putExtra("categoria", "tierra");
                 intentJuego.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intentJuego);
                 finish();
@@ -50,14 +61,27 @@ public class Categorias_activity extends AppCompatActivity {
             //intent de llamar a la actividad que mostrará las caracteristicas
             btnAgua.setOnClickListener(v -> {
                 //actividad aprender animales acuaticos
+                Intent intentAprender=new Intent(this, Pantalla_aprender.class);
+                intentAprender.putExtra("categoria", "agua");
+                intentAprender.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intentAprender);
+                finish();
             });
             btnAire.setOnClickListener(v -> {
                 //actividad aprender animales aereos
+                Intent intentAprender=new Intent(this, Pantalla_aprender.class);
+                intentAprender.putExtra("categoria", "aire");
+                intentAprender.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intentAprender);
+                finish();
             });
             btnTierra.setOnClickListener(v -> {
                 //actividad aprender animales terrestres
                 Intent intentAprender=new Intent(this, Pantalla_aprender.class);
+                intentAprender.putExtra("categoria", "tierra");
+                intentAprender.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intentAprender);
+                finish();
             });
         }
     }

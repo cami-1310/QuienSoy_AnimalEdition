@@ -1,10 +1,10 @@
 package com.example.proyectofinal;
 
-public class AnimalesTierra_aprender {
+public class Animales_aprender {
     public int id, img;
     public String nombre, tamano, peso, peligrosidad, apariencia, habitat, dieta, generalidades;
 
-    public AnimalesTierra_aprender(int id, int img, String nombre, String tamano, String peso, String peligrosidad, String apariencia, String habitat, String dieta, String generalidades){
+    public Animales_aprender(int id, int img, String nombre, String tamano, String peso, String peligrosidad, String apariencia, String habitat, String dieta, String generalidades){
         this.id=id;
         this.img=img;
         this.nombre=nombre;

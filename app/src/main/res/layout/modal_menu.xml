@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="24dp"
+    android:layout_margin="20dp"
+    android:orientation="vertical"
+    android:background="@drawable/bg_modal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center">
+
+    <TextView
+        android:fontFamily="@font/slackey_regular"
+        android:textColor="#1E3051"
+        android:text="Menú"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:paddingBottom="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:fontFamily="@font/shadowsintolighttwo_regular"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Cómo jugar?"/>
+
+    <TextView
+        android:fontFamily="@font/shadowsintolighttwo_regular"
+        android:textColor="#1E3051"
+        android:textSize="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Si estás en una sesión de aprendizaje:"/>
+
+    <TextView
+        android:fontFamily="@font/shadowsintolighttwo_regular"
+        android:textSize="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1) Toca la pantalla para avanzar\n2) Si tienes dudad, sacude el dispositivo para repasar el animal después"/>
+
+    <TextView
+        android:fontFamily="@font/shadowsintolighttwo_regular"
+        android:textSize="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="\nSi estás en una sesión de juego:"/>
+
+    <TextView
+        android:fontFamily="@font/shadowsintolighttwo_regular"
+        android:textColor="#1E3051"
+        android:textSize="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1) Pon atención a la descripción\n2) Elige el animal que más encaje con las características"/>
+
+    <ImageButton
+        android:id="@+id/btnSalir"
+        android:src="@drawable/btn_salir"
+        android:background="@drawable/formato_btn"
+        android:layout_width="300px"
+        android:layout_height="90px"
+        android:scaleType="centerCrop"
+        android:clipToOutline="true"
+        android:layout_margin="20dp"/>
+</LinearLayout>

@@ -8,27 +8,28 @@ import android.widget.ImageButton;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class OpcionesTierra extends GridLayout {
+public class Opciones extends GridLayout {
     private int idCorrecto;
     private ListenerOpciones listener;
     private ImageButton opc1, opc2, opc3, opc4;
-    private ArrayList<AnimalesTierra_jugar> listAnimales=ListAnimalesTierra_jugar.listAnimalesTierra_jugar;
+    private ArrayList<Animales_jugar> listAnimales;
+    String categoria;
 
     public interface ListenerOpciones {
         void onOpcionSeleccionada(int idAnimalSeleccionado);
     }
 
-    public OpcionesTierra(Context context){
+    public Opciones(Context context){
         super(context);
         inicializar(context);
     }
 
-    public OpcionesTierra(Context context, AttributeSet attrs) {
+    public Opciones(Context context, AttributeSet attrs) {
         super(context, attrs);
         inicializar(context);
     }
 
-    public OpcionesTierra(Context context, AttributeSet attrs, int defStyleAttr) {
+    public Opciones(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         inicializar(context);
     }
@@ -41,40 +42,51 @@ public class OpcionesTierra extends GridLayout {
         opc4=findViewById(R.id.opc4);
     }
 
-    public void setOpciones(Context context, int idCorrecto, ArrayList<AnimalesTierra_jugar> listAnimales, ListenerOpciones listener) {
+    public void setOpciones(Context context, int idCorrecto, String categoria, ArrayList<Animales_jugar> listAnimales, ListenerOpciones listener) {
         this.idCorrecto=idCorrecto;
-        this.listener=listener;
+        this.categoria=categoria;
         this.listAnimales=listAnimales;
+        this.listener=listener;
         generarOpciones(context);
     }
 
     //obtener imagen para cada opc
     private int getResId(Context context, int num){
-        String name="op_tierra"+num;
+        String name="";
+        switch (categoria){
+            case "agua":
+                name="op_agua"+num;
+                break;
+            case "aire":
+                name="op_aire"+num;
+                break;
+            case "tierra":
+                name="op_tierra"+num;
+        }
         return context.getResources().getIdentifier(name, "drawable", context.getPackageName());
     }
 
     private void generarOpciones(Context context) {
-        AnimalesTierra_jugar correcto=null;
-        for(AnimalesTierra_jugar a:listAnimales) {
+        Animales_jugar correcto=null;
+        for(Animales_jugar a:listAnimales) {
             if (a.getId() == idCorrecto) {
                 correcto=a;
                 break;
             }
         }
 
-        ArrayList<AnimalesTierra_jugar> opciones=new ArrayList<>();
+        ArrayList<Animales_jugar> opciones=new ArrayList<>();
         opciones.add(correcto);
 
         //para generar 4 opciones incorrectas + 1 correcta
         while (opciones.size()<4){
-            AnimalesTierra_jugar random=listAnimales.get((int)(Math.random()*listAnimales.size()));
+            Animales_jugar random=listAnimales.get((int)(Math.random()*listAnimales.size()));
             //evitamos repetir la opcion correcta
             if(random.getId()==correcto.getId()) continue;
 
             //no repetir opciones
             boolean repetido=false;
-            for(AnimalesTierra_jugar op:opciones) {
+            for(Animales_jugar op:opciones) {
                 if (op.getId()==random.getId()) {
                     repetido=true;
                     break;

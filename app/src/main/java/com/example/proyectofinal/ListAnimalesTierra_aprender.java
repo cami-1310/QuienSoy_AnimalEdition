@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class ListAnimalesTierra_aprender {
-    public static ArrayList<AnimalesTierra_aprender> listAnimalesTierra_aprender=new ArrayList<>(Arrays.asList(
-            new AnimalesTierra_aprender(
+    public static ArrayList<Animales_aprender> listAnimalesTierra_aprender=new ArrayList<>(Arrays.asList(
+            new Animales_aprender(
                     1,
                     R.drawable.leon,
                     "León",
@@ -16,7 +16,7 @@ public class ListAnimalesTierra_aprender {
                     "África Subsahariana",
                     "Carnívoro",
                     "Segundo felino más grande. Vive en grupos sociales llamados manadas."),
-            new AnimalesTierra_aprender(
+            new Animales_aprender(
                     2,
                     R.drawable.elefante,
                     "Elefante africano",
@@ -27,7 +27,7 @@ public class ListAnimalesTierra_aprender {
                     "Africa Subsahariana",
                     "Herbívoro",
                     "Animal inteligente y social. Crucial dispersor de semillas."),
-            new AnimalesTierra_aprender(
+            new Animales_aprender(
                     3,
                     R.drawable.tigre,
                     "Tigre",
@@ -38,7 +38,7 @@ public class ListAnimalesTierra_aprender {
                     "Asia (Siberia, India, Sumatra)",
                     "Carnívoro",
                     "Depredador solitario y territorial. Seis subespecies vivas."),
-            new AnimalesTierra_aprender(
+            new Animales_aprender(
                     4,
                     R.drawable.oso,
                     "Oso pardo",
@@ -49,7 +49,7 @@ public class ListAnimalesTierra_aprender {
                     "Norteamérica y Eurasia",
                     "Omnívoro",
                     "Puede hibernar. Importante para el equilibrio del ecosistema."),
-            new AnimalesTierra_aprender(
+            new Animales_aprender(
                     5,
                     R.drawable.gorila,
                     "Gorila de montaña",
@@ -60,7 +60,7 @@ public class ListAnimalesTierra_aprender {
                     "África Central",
                     "Herbívoro/Frugívoro",
                     "Altamente social. Liderado por un ‘espalda plateada’."),
-            new AnimalesTierra_aprender(
+            new Animales_aprender(
                     6,
                     R.drawable.jirafa,
                     "Jirafa",
@@ -71,7 +71,7 @@ public class ListAnimalesTierra_aprender {
                     "África Subsahariana",
                     "Herbívoro",
                     "El mamífero más alto. Come hojas de árboles altos."),
-            new AnimalesTierra_aprender(
+            new Animales_aprender(
                     7,
                     R.drawable.rinoceronte,
                     "Rinoceronte",
@@ -82,7 +82,7 @@ public class ListAnimalesTierra_aprender {
                     "África Oriental y Meridional",
                     "Herbívoro",
                     "En peligro crítico debido a la caza furtiva."),
-            new AnimalesTierra_aprender(
+            new Animales_aprender(
                     8,
                     R.drawable.zorro,
                     "Zorro rojo",
@@ -93,7 +93,7 @@ public class ListAnimalesTierra_aprender {
                     "América del Norte, Europa, Asia, Australia",
                     "Omnívoro",
                     "Cánido con la distribución más amplia del mundo. Muy adaptable."),
-            new AnimalesTierra_aprender(
+            new Animales_aprender(
                     9,
                     R.drawable.bisonte,
                     "Bisonte",
@@ -104,7 +104,7 @@ public class ListAnimalesTierra_aprender {
                     "Praderas de Norteamérica",
                     "Herbívoro",
                     "El mamífero terrestre más grande de Norteamérica. Clave para el ecosistema de pastizales."),
-            new AnimalesTierra_aprender(
+            new Animales_aprender(
                     10,
                     R.drawable.panda,
                     "Panda",
@@ -115,7 +115,7 @@ public class ListAnimalesTierra_aprender {
                     "Montañas de China Central",
                     "Herbívoro (Bambú)",
                     "Dieta especializada en bambú. Símbolo de conservación."),
-            new AnimalesTierra_aprender(
+            new Animales_aprender(
                     11,
                     R.drawable.cebra,
                     "Cebra",
@@ -126,7 +126,7 @@ public class ListAnimalesTierra_aprender {
                     "Pastizales de África Oriental y Meridional",
                     "Herbívoro",
                     "Sus rayas pueden confundir depredadores (efecto deslumbramiento)."),
-            new AnimalesTierra_aprender(
+            new Animales_aprender(
                     12,
                     R.drawable.canguro,
                     "Canguro rojo",
@@ -137,7 +137,7 @@ public class ListAnimalesTierra_aprender {
                     "Desiertos de Australia",
                     "Herbívoro",
                     "Marsupial más grande del mundo. Puede saltar grandes distancias."),
-            new AnimalesTierra_aprender(
+            new Animales_aprender(
                     13,
                     R.drawable.lobo,
                     "Lobo gris",
@@ -148,7 +148,7 @@ public class ListAnimalesTierra_aprender {
                     "América del Norte, Eurasia, Norte de África",
                     "Carnívoro",
                     "Vive en manadas con estructuras sociales complejas."),
-            new AnimalesTierra_aprender(
+            new Animales_aprender(
                     14,
                     R.drawable.koala,
                     "Koala",
@@ -159,7 +159,7 @@ public class ListAnimalesTierra_aprender {
                     "Australia Oriental y Meridional",
                     "Herbívoro (Eucalipto)",
                     "Dieta altamente especializada en hojas de eucalipto."),
-            new AnimalesTierra_aprender(
+            new Animales_aprender(
                     15,
                     R.drawable.cocodrilo,
                     "Cocodrilo",
@@ -170,7 +170,7 @@ public class ListAnimalesTierra_aprender {
                     "África Subsahariana",
                     "Carnívoro",
                     "Caza al acecho y puede permanecer sumergido durante horas."),
-            new AnimalesTierra_aprender(
+            new Animales_aprender(
                     16,
                     R.drawable.cobra,
                     "Cobra real",
@@ -181,7 +181,7 @@ public class ListAnimalesTierra_aprender {
                     "Asia (India, Sureste Asiático)",
                     "Carnívoro (Ofiófago)",
                     "Veneno mortal. Única serpiente que construye nidos."),
-            new AnimalesTierra_aprender(
+            new Animales_aprender(
                     17,
                     R.drawable.camello,
                     "Camello",
@@ -192,7 +192,7 @@ public class ListAnimalesTierra_aprender {
                     "Desiertos de África del Norte y Oriente Medio",
                     "Herbívoro",
                     "Adaptado para almacenar agua y sobrevivir en condiciones extremas del desierto."),
-            new AnimalesTierra_aprender(
+            new Animales_aprender(
                     18,
                     R.drawable.perezoso,
                     "Perezoso",
@@ -203,7 +203,7 @@ public class ListAnimalesTierra_aprender {
                     "Selvas de Centro y Sudamérica",
                     "Herbívoro",
                     "Metabolismo muy lento para digerir hojas de baja energía."),
-            new AnimalesTierra_aprender(
+            new Animales_aprender(
                     19,
                     R.drawable.avestruz,
                     "Avestruz",
@@ -214,7 +214,7 @@ public class ListAnimalesTierra_aprender {
                     "Sabanas de África",
                     "Omnívoro",
                     "Corre a 70 km/h y pone los huevos más grandes del mundo."),
-            new AnimalesTierra_aprender(
+            new Animales_aprender(
                     20,
                     R.drawable.armadillo,
                     "Armadillo",

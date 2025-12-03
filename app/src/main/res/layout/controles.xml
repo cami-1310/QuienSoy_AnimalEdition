@@ -10,8 +10,18 @@
         android:id="@+id/btnSoundToggle"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:src="@drawable/btn_menu"
+        android:background="@null"
+        android:scaleType="centerCrop"
+        android:layout_marginRight="25dp"/>
+
+    <ImageButton
+        android:id="@+id/btnMenu"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:src="@drawable/btn_sound"
         android:background="@null"
         android:scaleType="centerCrop"
         android:layout_marginRight="5dp"/>
+
 </LinearLayout>

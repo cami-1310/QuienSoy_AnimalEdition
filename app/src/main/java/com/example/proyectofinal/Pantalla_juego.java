@@ -25,14 +25,18 @@ public class Pantalla_juego extends AppCompatActivity {
     public int score=0;
     private CaptionBox captionBox;
     private ScoreBox scoreBox;
-    private OpcionesTierra opciones;
+    private Opciones opciones;
     private CountDownTimer timer;
     private static final long TIMEPOXPREG=10000;
     private ProgressBar progressBar;
-    private ArrayList<AnimalesTierra_jugar> listAnimales=ListAnimalesTierra_jugar.listAnimalesTierra_jugar;
-    private ArrayList<AnimalesTierra_jugar> listRonda;
+    private ArrayList<Animales_jugar> listAnimalesAgua=ListAnimalesAgua_jugar.listAnimalesAgua_jugar;
+    private ArrayList<Animales_jugar> listAnimalesAire=ListAnimalesAire_jugar.listAnimalesAire_jugar;
+    private ArrayList<Animales_jugar> listAnimalesTierra=ListAnimalesTierra_jugar.listAnimalesTierra_jugar;
+    private ArrayList<Animales_jugar> listRonda;
+    private ArrayList<Animales_jugar> listAnimales; //lista a enviar para generar las opciones
     private SoundPool soundPool;
     private int soundAcierto, soundError;
+    private String categoria;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +48,9 @@ public class Pantalla_juego extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        Intent intent=getIntent();
+        categoria=intent.getStringExtra("categoria");
 
         //inicializando para reproducir sonido segun SDK
         if(android.os.Build.VERSION.SDK_INT>=android.os.Build.VERSION_CODES.LOLLIPOP){
@@ -79,7 +86,7 @@ public class Pantalla_juego extends AppCompatActivity {
             return;
         }
 
-        AnimalesTierra_jugar animal=listRonda.get(0);
+        Animales_jugar animal=listRonda.get(0);
         captionBox.setCaption(animal.getCaption());
         scoreBox.setScore(score);
         aplicarAnimacion(captionBox);
@@ -104,7 +111,19 @@ public class Pantalla_juego extends AppCompatActivity {
             }
         }.start();
 
-        opciones.setOpciones(this, animal.getId(), listAnimales, idSeleccionado -> {
+        switch (categoria){
+            case "agua":
+                listAnimales=new ArrayList<>(listAnimalesAgua);
+            break;
+            case "aire":
+                listAnimales=new ArrayList<>(listAnimalesAire);
+                break;
+            case "tierra":
+                listAnimales=new ArrayList<>(listAnimalesTierra);
+                break;
+        }
+
+        opciones.setOpciones(this, animal.getId(), categoria, listAnimales, idSeleccionado -> {
             timer.cancel();
             progressBar.setProgress(0);
 
@@ -125,7 +144,17 @@ public class Pantalla_juego extends AppCompatActivity {
     }
 
     private void cargarPreguntas(){
-        listRonda=new ArrayList<>(listAnimales);
+        switch (categoria){
+            case "agua":
+                listRonda=new ArrayList<>(listAnimalesAgua);
+                break;
+            case "aire":
+                listRonda=new ArrayList<>(listAnimalesAire);
+                break;
+            case "tierra":
+                listRonda=new ArrayList<>(listAnimalesTierra);
+                break;
+        }
         //mezclando la lista de animales antes para no tener el mismo orden siempre
         Collections.shuffle(listRonda);
     }

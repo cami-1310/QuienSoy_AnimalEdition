@@ -26,6 +26,7 @@
 
         <com.example.proyectofinal.NameBox
             android:id="@+id/nameBox"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="60dp"/>
 
@@ -34,8 +35,8 @@
             android:layout_height="wrap_content"
             app:cardCornerRadius="20dp"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="35dp">
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="25dp">
 
             <ImageView
                 android:id="@+id/img"

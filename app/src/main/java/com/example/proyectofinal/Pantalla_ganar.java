@@ -30,11 +30,15 @@ public class Pantalla_ganar extends AppCompatActivity {
 
         btnAgain.setOnClickListener(v -> {
             Intent intent=new Intent(this, Categorias_activity.class);
+            intent.putExtra("modoJuego", true);
             startActivity(intent);
+            finish();
         });
         btnLearn.setOnClickListener(v -> {
-            Intent intent=new Intent(this, Pantalla_aprender.class);
+            Intent intent=new Intent(this, Categorias_activity.class);
+            intent.putExtra("modoJuego", false);
             startActivity(intent);
+            finish();
         });
         btnSalir.setOnClickListener(v -> {
             finishAffinity();

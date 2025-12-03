@@ -31,13 +31,16 @@ public class Pantalla_aprender extends AppCompatActivity implements SensorEventL
     private Sensor sensor_acelerometro;
     private static final float UMBRAL_SHAKE=15f; //sensibilidad del gesto de sacudir
     private long ultimoMov=0;
+    private String categoria;
 
     NameBox namebox;
     InfoBox infobox;
     ImageView img;
     TextView txtTam, txtPeso, txtPeligrosidad, txtApariencia, txtHabitat, txtDieta, txtGeneralidades;
-    ArrayList<AnimalesTierra_aprender> listAnimales=ListAnimalesTierra_aprender.listAnimalesTierra_aprender;
-    ArrayList<AnimalesTierra_aprender> listRonda;
+    private ArrayList<Animales_aprender> listAnimalesAgua=ListAnimalesAgua_aprender.listAnimalesAgua_aprender;
+    private ArrayList<Animales_aprender> listAnimalesAire=ListAnimalesAire_aprender.listAnimalesAire_aprender;
+    private ArrayList<Animales_aprender> listAnimalesTierra=ListAnimalesTierra_aprender.listAnimalesTierra_aprender;
+    ArrayList<Animales_aprender> listRonda;
     private SoundPool soundPool;
     private int soundAcierto, soundError;
 
@@ -51,6 +54,9 @@ public class Pantalla_aprender extends AppCompatActivity implements SensorEventL
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        Intent intent=getIntent();
+        categoria=intent.getStringExtra("categoria");
 
         //inicializando para reproducir sonido segun SDK
         if(android.os.Build.VERSION.SDK_INT>=android.os.Build.VERSION_CODES.LOLLIPOP){
@@ -101,7 +107,7 @@ public class Pantalla_aprender extends AppCompatActivity implements SensorEventL
             return;
         }
 
-        AnimalesTierra_aprender a=listRonda.get(0);
+        Animales_aprender a=listRonda.get(0);
         namebox.setNombre(a.getNombre());
         img.setImageResource(a.getImg());
         txtTam.setText("Tamaño: "+a.getTamano());
@@ -123,7 +129,17 @@ public class Pantalla_aprender extends AppCompatActivity implements SensorEventL
     }
 
     private void cargarLista(){
-        listRonda=new ArrayList<>(listAnimales); //arreglo copia
+        switch (categoria){
+            case "agua":
+                listRonda=new ArrayList<>(listAnimalesAgua);
+                break;
+            case "aire":
+                listRonda=new ArrayList<>(listAnimalesAire);
+                break;
+            case "tierra":
+                listRonda=new ArrayList<>(listAnimalesTierra);
+                break;
+        }
         //mezclamos el arreglo pra no tener el mismo orden
         Collections.shuffle(listRonda);
     }
