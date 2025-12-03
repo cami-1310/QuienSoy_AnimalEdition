@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:rowCount="2"
+    android:columnCount="2"
+    android:id="@+id/opciones"
+    android:background="#FFFFFFFF"
+    android:padding="20dp">
+
+    <ImageButton
+        android:id="@+id/opc1"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_column="0"
+        android:layout_row="0"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal"
+        android:scaleType="centerCrop"
+        android:clipToOutline="true"
+        android:background="@drawable/formato_btn"
+        android:src="@drawable/op_tierra1"
+        android:layout_margin="10dp"/>
+
+    <ImageButton
+        android:id="@+id/opc2"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_column="1"
+        android:layout_row="0"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal"
+        android:scaleType="centerCrop"
+        android:clipToOutline="true"
+        android:background="@drawable/formato_btn"
+        android:src="@drawable/op_tierra1"
+        android:layout_margin="10dp"/>
+
+    <ImageButton
+        android:id="@+id/opc3"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_column="0"
+        android:layout_row="1"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal"
+        android:scaleType="centerCrop"
+        android:clipToOutline="true"
+        android:background="@drawable/formato_btn"
+        android:src="@drawable/op_tierra1"
+        android:layout_margin="10dp" />
+
+    <ImageButton
+        android:id="@+id/opc4"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_column="1"
+        android:layout_row="1"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal"
+        android:scaleType="centerCrop"
+        android:clipToOutline="true"
+        android:background="@drawable/formato_btn"
+        android:src="@drawable/op_tierra1"
+        android:layout_margin="10dp"/>
+</GridLayout>

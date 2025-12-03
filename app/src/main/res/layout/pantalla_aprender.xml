@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/main">
+
+    <!--fondo-->
+    <com.example.proyectofinal.CLienzo
+        android:id="@+id/lienzo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!--controles de sonido-->
+    <com.example.proyectofinal.Controles
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp">
+
+        <com.example.proyectofinal.NameBox
+            android:id="@+id/nameBox"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="35dp">
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/leon"/>
+        </androidx.cardview.widget.CardView>
+
+        <com.example.proyectofinal.InfoBox
+            android:id="@+id/info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</FrameLayout>

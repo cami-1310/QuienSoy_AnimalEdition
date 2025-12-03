@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main">
+
+    <!--fondo-->
+    <com.example.proyectofinal.CLienzo
+        android:id="@+id/lienzo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!--controles de sonido-->
+    <com.example.proyectofinal.Controles
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!--score-->
+        <com.example.proyectofinal.ScoreBox
+            android:id="@+id/scoreBox"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_margin="20dp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_margin="10dp">
+
+            <!--barra reloj-->
+            <ProgressBar
+                android:id="@+id/progressTiempo"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="300dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:indeterminate="false"
+                android:max="100"
+                android:progress="100"
+                android:progressTint="#A2E0E3" />
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/logo_reloj"/>
+        </FrameLayout>
+
+        <!--caption-->
+        <com.example.proyectofinal.CaptionBox
+            android:id="@+id/captionBox"
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:layout_margin="20dp"/>
+
+        <!--opciones-->
+        <com.example.proyectofinal.OpcionesTierra
+            android:id="@+id/opciones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"/>
+    </LinearLayout>
+</FrameLayout>
