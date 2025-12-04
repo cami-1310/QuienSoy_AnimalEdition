@@ -13,15 +13,18 @@ public class Jugador {
 
     private String nombreUsuario;
     private int puntaje;
-    private long fechaRegistro;
+    private long fechaRegistro; // Timestamp en milisegundos
 
+    // Constructor que Room usará para crear objetos Jugador
     public Jugador(String nombreUsuario, int puntaje, long fechaRegistro) {
         this.nombreUsuario = nombreUsuario;
         this.puntaje = puntaje;
         this.fechaRegistro = fechaRegistro;
     }
 
+    // --- Getters y Setters ---
 
+    // Necesario para que Room manipule el ID
     public void setId(int id) {
         this.id = id;
     }
@@ -33,7 +36,6 @@ public class Jugador {
     public String getNombreUsuario() {
         return nombreUsuario;
     }
-
 
     public int getPuntaje() {
         return puntaje;
