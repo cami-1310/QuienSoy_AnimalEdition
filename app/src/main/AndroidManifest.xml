@@ -11,14 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoFinal">
-
-        <!-- MainActivity (Mantenemos, pero sin filtro de LAUNCHER) -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
-        </activity>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-        <!-- Otras Activities -->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Username_activity"
             android:exported="true">
@@ -38,17 +39,6 @@
         <activity
             android:name=".Pantalla_ganar"
             android:exported="true">
-        </activity>
-
-        <!-- 🛑 NUEVA ACTIVITY Y PUNTO DE INICIO TEMPORAL 🛑 -->
-        <activity
-            android:name=".scores_activity"
-            android:exported="true">
-            <!-- ESTE FILTRO HACE QUE LA APP INICIE AQUÍ -->
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <service android:name=".MusicPlayer"/>
