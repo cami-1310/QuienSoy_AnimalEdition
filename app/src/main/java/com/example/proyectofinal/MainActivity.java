@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         btnPlay=findViewById(R.id.btnPlay);
         btnLearn=findViewById(R.id.btnLearn);
 
+
         btnPlay.setOnClickListener(v -> {
             Intent intent=new Intent(this, Categorias_activity.class);
             intent.putExtra("modoJuego", modoJuego=true); //true significa va a jugar
