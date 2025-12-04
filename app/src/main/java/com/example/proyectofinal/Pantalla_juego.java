@@ -73,7 +73,7 @@ public class Pantalla_juego extends AppCompatActivity {
         opciones=findViewById(R.id.opciones);
         progressBar=findViewById(R.id.progressTiempo);
         //para sqlite
-        nombreUsuario=intent.getStringExtra("nombreUsuario");
+        nombreUsuario=intent.getStringExtra("username");
         AppDatabase db = AppDatabase.getDatabase(getApplicationContext());
         jugadorDao = db.jugadorDao();
         // inicializar el servicio de ejecución de hilos
@@ -91,7 +91,7 @@ public class Pantalla_juego extends AppCompatActivity {
     private void mostrarPregunta(){
         if(listRonda.isEmpty()){
             long fechaActual = System.currentTimeMillis(); // La marca de tiempo actual
-            Jugador jugador = new Jugador("anonimo", score, fechaActual);
+            Jugador jugador = new Jugador(nombreUsuario, score, fechaActual);
             executorService.execute(new Runnable() {
                 @Override
                 public void run() {

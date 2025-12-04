@@ -15,7 +15,6 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
     ImageButton btnPlay, btnLearn;
-    Boolean modoJuego=true; //para indicar si el modo de la app es juego o aprendizaje
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,13 +36,13 @@ public class MainActivity extends AppCompatActivity {
 
 
         btnPlay.setOnClickListener(v -> {
-            Intent intent=new Intent(this, Categorias_activity.class);
-            intent.putExtra("modoJuego", modoJuego=true); //true significa va a jugar
+            Intent intent=new Intent(this, Username_activity.class);
+            intent.putExtra("modoJuego", true); //true significa va a jugar
             startActivity(intent);
         });
         btnLearn.setOnClickListener(v -> {
-            Intent intent=new Intent(this, Categorias_activity.class);
-            intent.putExtra("modoJuego", modoJuego=false); //false significa va a aprender
+            Intent intent=new Intent(this, Username_activity.class);
+            intent.putExtra("modoJuego", false); //false significa va a aprender
             startActivity(intent);
         });
     }
