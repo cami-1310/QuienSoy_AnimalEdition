@@ -14,7 +14,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-    ImageButton btnPlay, btnLearn;
+    ImageButton btnPlay, btnLearn,btnScore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
         btnPlay=findViewById(R.id.btnPlay);
         btnLearn=findViewById(R.id.btnLearn);
+        btnScore=findViewById(R.id.btnScore);
+
 
 
         btnPlay.setOnClickListener(v -> {
@@ -43,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
         btnLearn.setOnClickListener(v -> {
             Intent intent=new Intent(this, Username_activity.class);
             intent.putExtra("modoJuego", false); //false significa va a aprender
+            startActivity(intent);
+        });
+        btnScore.setOnClickListener(v -> {
+            Intent intent = new Intent(this, scores_activity.class);
             startActivity(intent);
         });
     }

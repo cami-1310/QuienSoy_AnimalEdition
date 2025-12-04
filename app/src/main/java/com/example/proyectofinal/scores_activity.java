@@ -1,6 +1,7 @@
 package com.example.proyectofinal;
 
 import android.os.Bundle;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +20,8 @@ public class scores_activity extends AppCompatActivity {
 
     private JugadorDao jugadorDao;
     private JugadorAdapter jugadorAdapter;
+    private ImageButton btnSalir;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,7 @@ public class scores_activity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        btnSalir=findViewById(R.id.btnSalir);
 
         // 1. Inicializar Room Database y DAO
         AppDatabase db = AppDatabase.getDatabase(getApplicationContext());
@@ -49,6 +53,10 @@ public class scores_activity extends AppCompatActivity {
         // 3. Observar los datos (LiveData)
         jugadorDao.obtenerTodosLosJugadores().observe(this, jugadores -> {
             jugadorAdapter.setJugadores(jugadores);
+        });
+
+        btnSalir.setOnClickListener(v -> {
+            finish();
         });
     }
 }

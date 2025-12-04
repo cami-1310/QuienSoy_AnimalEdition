@@ -76,4 +76,14 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
     </LinearLayout>
+    <ImageButton
+        android:id="@+id/btnSalir"
+        android:src="@drawable/btn_salir"
+        android:background="@drawable/formato_btn"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:scaleType="centerCrop"
+        android:clipToOutline="true"
+        android:layout_margin="16dp"
+        android:layout_gravity="bottom|right" />
 </FrameLayout>

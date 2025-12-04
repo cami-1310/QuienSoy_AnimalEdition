@@ -65,6 +65,16 @@
             android:background="@drawable/formato_btn"
             android:src="@drawable/learn"
             android:layout_gravity="center_horizontal"/>
+        <ImageButton
+            android:id="@+id/btnScore"
+            android:layout_width="500px"
+            android:layout_height="150px"
+            android:scaleType="centerCrop"
+            android:clipToOutline="true"
+            android:background="@drawable/formato_btn"
+            android:src="@drawable/btn_scores"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50px"/>
     </LinearLayout>
 
     <!--controles de sonido-->
