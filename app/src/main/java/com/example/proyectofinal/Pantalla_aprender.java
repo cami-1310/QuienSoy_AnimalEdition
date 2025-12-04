@@ -118,7 +118,6 @@ public class Pantalla_aprender extends AppCompatActivity implements SensorEventL
         txtDieta.setText(a.getDieta());
         txtGeneralidades.setText("Generalidades: "+a.getGeneralidades());
         aplicarAnimacion(namebox);
-        aplicarAnimacion(img);
         aplicarAnimacion(infobox);
     }
 

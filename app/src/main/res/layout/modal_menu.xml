@@ -12,8 +12,8 @@
     <TextView
         android:fontFamily="@font/slackey_regular"
         android:textColor="#1E3051"
-        android:text="Menú"
-        android:textSize="30dp"
+        android:text="¿Cómo jugar?"
+        android:textSize="25dp"
         android:textStyle="bold"
         android:layout_gravity="center"
         android:paddingBottom="12dp"
@@ -22,14 +22,7 @@
 
     <TextView
         android:fontFamily="@font/shadowsintolighttwo_regular"
-        android:textSize="20dp"
         android:textStyle="bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="¿Cómo jugar?"/>
-
-    <TextView
-        android:fontFamily="@font/shadowsintolighttwo_regular"
         android:textColor="#1E3051"
         android:textSize="20dp"
         android:layout_width="wrap_content"
@@ -46,13 +39,14 @@
     <TextView
         android:fontFamily="@font/shadowsintolighttwo_regular"
         android:textSize="20dp"
+        android:textColor="#1E3051"
+        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="\nSi estás en una sesión de juego:"/>
 
     <TextView
         android:fontFamily="@font/shadowsintolighttwo_regular"
-        android:textColor="#1E3051"
         android:textSize="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

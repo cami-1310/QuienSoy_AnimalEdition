@@ -27,7 +27,7 @@ public class Pantalla_juego extends AppCompatActivity {
     private ScoreBox scoreBox;
     private Opciones opciones;
     private CountDownTimer timer;
-    private static final long TIMEPOXPREG=10000;
+    private static final long TIMEPOXPREG=30000;
     private ProgressBar progressBar;
     private ArrayList<Animales_jugar> listAnimalesAgua=ListAnimalesAgua_jugar.listAnimalesAgua_jugar;
     private ArrayList<Animales_jugar> listAnimalesAire=ListAnimalesAire_jugar.listAnimalesAire_jugar;
@@ -106,7 +106,7 @@ public class Pantalla_juego extends AppCompatActivity {
                 progressBar.setProgress(0);
                 //si se acaba el tiempo, pasa a la sig pregunta
                 soundPool.play(soundError, 1, 1, 0, 0, 1f); //sonido de error
-                Collections.rotate(listRonda, -1);
+                listRonda.remove(0);
                 mostrarPregunta();
             }
         }.start();
@@ -127,18 +127,18 @@ public class Pantalla_juego extends AppCompatActivity {
             timer.cancel();
             progressBar.setProgress(0);
 
+            listRonda.remove(0); //se quita para pasar al siguiente animal
+
             if (idSeleccionado==animal.getId()) {
+                //correcto
                 score++;
                 scoreBox.setScore(score);
                 soundPool.play(soundAcierto, 1, 1, 0, 0, 1f); //sonido de acierto
-                listRonda.remove(0); //se quita el que acertó
-                mostrarPregunta();
             } else {
-                // incorrecto
+                //incorrecto
                 soundPool.play(soundError, 1, 1, 0, 0, 1f); //sonido de error
-                Collections.rotate(listRonda, -1);
-                mostrarPregunta();
             }
+            mostrarPregunta();
         });
         aplicarAnimacion(opciones);
     }
