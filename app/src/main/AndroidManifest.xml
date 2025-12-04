@@ -21,6 +21,10 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".Username_activity"
+            android:exported="true">
+        </activity>
+        <activity
             android:name=".Categorias_activity"
             android:exported="true">
         </activity>

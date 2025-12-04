@@ -24,8 +24,10 @@ public class Categorias_activity extends AppCompatActivity {
             return insets;
         });
 
+        //se recibe desde Username_activity el modoJuego y username
         Intent intent=getIntent();
         Boolean modoJuego=intent.getBooleanExtra("modoJuego", true);
+        String username=intent.getStringExtra("username");
 
         btnAgua=findViewById(R.id.btnAgua);
         btnAire=findViewById(R.id.btnAire);
@@ -37,6 +39,7 @@ public class Categorias_activity extends AppCompatActivity {
                 //actividad preguntas animales acuaticos
                 Intent intentJuego=new Intent(this, Pantalla_juego.class);
                 intentJuego.putExtra("categoria", "agua");
+                intentJuego.putExtra("username", username);
                 intentJuego.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intentJuego);
                 finish();
@@ -45,6 +48,7 @@ public class Categorias_activity extends AppCompatActivity {
                 //actividad preguntas animales aereos
                 Intent intentJuego=new Intent(this, Pantalla_juego.class);
                 intentJuego.putExtra("categoria", "aire");
+                intentJuego.putExtra("username", username);
                 intentJuego.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intentJuego);
                 finish();
@@ -53,6 +57,7 @@ public class Categorias_activity extends AppCompatActivity {
                 //actividad preguntas animales terrestres
                 Intent intentJuego=new Intent(this, Pantalla_juego.class);
                 intentJuego.putExtra("categoria", "tierra");
+                intentJuego.putExtra("username", username);
                 intentJuego.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intentJuego);
                 finish();
@@ -63,6 +68,7 @@ public class Categorias_activity extends AppCompatActivity {
                 //actividad aprender animales acuaticos
                 Intent intentAprender=new Intent(this, Pantalla_aprender.class);
                 intentAprender.putExtra("categoria", "agua");
+                intentAprender.putExtra("username", username);
                 intentAprender.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intentAprender);
                 finish();
@@ -71,6 +77,7 @@ public class Categorias_activity extends AppCompatActivity {
                 //actividad aprender animales aereos
                 Intent intentAprender=new Intent(this, Pantalla_aprender.class);
                 intentAprender.putExtra("categoria", "aire");
+                intentAprender.putExtra("username", username);
                 intentAprender.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intentAprender);
                 finish();
@@ -79,6 +86,7 @@ public class Categorias_activity extends AppCompatActivity {
                 //actividad aprender animales terrestres
                 Intent intentAprender=new Intent(this, Pantalla_aprender.class);
                 intentAprender.putExtra("categoria", "tierra");
+                intentAprender.putExtra("username", username);
                 intentAprender.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intentAprender);
                 finish();
