@@ -31,7 +31,7 @@ public class JugadorAdapter extends RecyclerView.Adapter<JugadorAdapter.JugadorV
     @Override
     public JugadorViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.scores, parent, false);
+                .inflate(R.layout.item_score, parent, false);
         return new JugadorViewHolder(itemView);
     }
 
