@@ -20,6 +20,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Pantalla_juego extends AppCompatActivity {
     public int score=0;
@@ -37,6 +39,11 @@ public class Pantalla_juego extends AppCompatActivity {
     private SoundPool soundPool;
     private int soundAcierto, soundError;
     private String categoria;
+
+    //para sqlite
+    private String nombreUsuario;
+    private JugadorDao jugadorDao; // DAO
+    private ExecutorService executorService; // para manejar la inserción asincrona (con hilo secundario)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +72,14 @@ public class Pantalla_juego extends AppCompatActivity {
         scoreBox=findViewById(R.id.scoreBox);
         opciones=findViewById(R.id.opciones);
         progressBar=findViewById(R.id.progressTiempo);
+        //para sqlite
+        nombreUsuario=intent.getStringExtra("nombreUsuario");
+        AppDatabase db = AppDatabase.getDatabase(getApplicationContext());
+        jugadorDao = db.jugadorDao();
+        // inicializar el servicio de ejecución de hilos
+        executorService = Executors.newSingleThreadExecutor();
+        //----------------------------------------------------------sqlite
+
         cargarPreguntas();
         mostrarPregunta();
     }
@@ -75,6 +90,15 @@ public class Pantalla_juego extends AppCompatActivity {
 
     private void mostrarPregunta(){
         if(listRonda.isEmpty()){
+            long fechaActual = System.currentTimeMillis(); // La marca de tiempo actual
+            Jugador jugador = new Jugador("anonimo", score, fechaActual);
+            executorService.execute(new Runnable() {
+                @Override
+                public void run() {
+                    jugadorDao.insertar(jugador);
+                }
+            });
+
             //reiniciamos lista para que si el usuario desea volver a jugar, no esté vacía
             cargarPreguntas();
             Toast.makeText(this, "Ronda terminada!", Toast.LENGTH_SHORT).show();
@@ -164,5 +188,9 @@ public class Pantalla_juego extends AppCompatActivity {
         super.onDestroy();
         soundPool.release();
         soundPool=null;
+        //executor del hilo de guardar score
+        if (executorService != null) {
+            executorService.shutdown();
+        }
     }
 }
